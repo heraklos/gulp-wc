@@ -1,0 +1,23 @@
+{
+  "name": "gulp-wc",
+  "version": "1.0.0",
+  "description": "gulp plugin to count lines of code passed through stream.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heraklos/gulp-wc.git"
+  },
+  "author": "kaji",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/heraklos/gulp-wc/issues"
+  },
+  "homepage": "https://github.com/heraklos/gulp-wc#readme",
+  "dependencies": {
+    "gulp-util": "^3.0.7",
+    "read-stream": "^2.1.1"
+  }
+}
