@@ -1,3 +1,9 @@
+/*
+**   Copyright (c) 2016 Takuya Kajiwara
+**   Released under the MIT license
+**   https://github.com/heraklos/gulp-wc/MIT-License.txt
+*/
+
 'use strict';
 
 var es = require('event-stream');
