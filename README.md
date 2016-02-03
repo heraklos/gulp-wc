@@ -25,8 +25,8 @@ gulp.task('wc', function() {
 This would show the output like below:
 
 ```shell
-[01:09:38] all.js :58 lines
-[01:09:38] test.js :29 lines
+[01:09:38] js/all.js :58 lines
+[01:09:38] js/test.js :29 lines
 [01:09:38] Total :87 lines
 ```
 
