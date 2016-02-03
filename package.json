@@ -18,6 +18,7 @@
   "homepage": "https://github.com/heraklos/gulp-wc#readme",
   "dependencies": {
     "gulp-util": "^3.0.7",
+    "lodash": "^4.2.0",
     "read-stream": "^2.1.1"
   }
 }
