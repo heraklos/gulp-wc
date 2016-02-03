@@ -1,6 +1,6 @@
 {
   "name": "gulp-wc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "gulp plugin to count lines of code passed through stream.",
   "main": "index.js",
   "scripts": {
