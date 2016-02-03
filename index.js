@@ -1,11 +1,11 @@
 'use strict';
 
-var es = require('event-stream');
-var gutil = require('gulp-util');
-var _ = require('lodash');
-var log = gutil.log;
-var colors= gutil.colors;
-var PluginError = gutil.PluginError;
+var es = require('event-stream'),
+    gutil = require('gulp-util'),
+    _ = require('lodash'),
+    log = gutil.log,
+    colors= gutil.colors,
+    PluginError = gutil.PluginError;
 
 function gulpWc() {
 
@@ -17,7 +17,7 @@ function gulpWc() {
 
     function countLines(file) {
 
-        rootDir = rootDir ? rootDir : pathToRootDir(file);
+        rootDir = rootDir || pathToRootDir(file);
 
         var path = file.path.split('/'),
             indexOfRootDir = _.findIndex(path, function(p) {return p == rootDir}),
@@ -36,7 +36,7 @@ function gulpWc() {
     }
 
     function printResult(filename) {
-        filename = filename ? filename : stringForTotal;
+        filename = filename || stringForTotal;
         var lines = filename !== stringForTotal ? linesOfCode : wholeLinesOfCode;
         log(colors.green(filename +" :" + lines + " lines"));
 
