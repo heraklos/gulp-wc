@@ -13,7 +13,10 @@ function gulpWc() {
         rootDir = "",
         linesOfCode = 0,
         wholeLinesOfCode = 0,
-        stringForTotal = "Total";
+        stringForTotal = "Total",
+        colorIndex = 0,
+        colorArray = ["green", "yellow", "blue", "magenta", "cyan"],
+        printResult = printResultClosure();
 
     function countLines(file) {
 
@@ -21,6 +24,7 @@ function gulpWc() {
 
         var path = file.path.split('/'),
             indexOfRootDir = _.findIndex(path, function(p) {return p == rootDir}),
+            parentDir = path[indexOfRootDir+1],
             filename = path.slice(indexOfRootDir+1, path.length).join('/');
 
         if (file.isNull()) {
@@ -31,15 +35,20 @@ function gulpWc() {
         linesOfCode = codeInUtf.split('\n').length;
         wholeLinesOfCode += linesOfCode;
 
-        printResult(filename);
+        printResult(filename, parentDir);
 
     }
 
-    function printResult(filename) {
-        filename = filename || stringForTotal;
-        var lines = filename !== stringForTotal ? linesOfCode : wholeLinesOfCode;
-        log(colors.green(filename +" :" + lines + " lines"));
+    function printResultClosure() {
+        var previousParentDir;
 
+        return function(filename, parentDir) {
+            colorIndex = parentDir == previousParentDir ? colorIndex : (colorIndex + 1) % 5;
+            previousParentDir = parentDir;
+            filename = filename || stringForTotal;
+            var lines = filename !== stringForTotal ? linesOfCode : wholeLinesOfCode;
+            log(colors[colorArray[colorIndex]](filename + " :" + lines + " lines"));
+        }
     }
 
     function pathToRootDir(file) {
