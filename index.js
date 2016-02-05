@@ -15,7 +15,7 @@ function gulpWc() {
         wholeLinesOfCode = 0,
         stringForTotal = "Total",
         colorIndex = 0,
-        colorArray = ["green", "yellow", "cyan", "magenta", "blue"],
+        colorArray = ["green", "yellow", "cyan", "magenta"],
         printResult = printResultClosure();
 
     function countLines(file) {
@@ -41,10 +41,10 @@ function gulpWc() {
 
     function printResultClosure() {
         var previousParentDir;
-        log(colors.green("===========gulp-wc output start============"));
+        log(colors.green("-------------gulp-wc output start-------------"));
 
         return function(filename, parentDir) {
-            colorIndex = parentDir == previousParentDir ? colorIndex : (colorIndex + 1) % 5;
+            colorIndex = parentDir == previousParentDir ? colorIndex : (colorIndex + 1) % 4;
             previousParentDir = parentDir;
             filename = filename || stringForTotal;
             var lines = filename !== stringForTotal ? linesOfCode : wholeLinesOfCode;
