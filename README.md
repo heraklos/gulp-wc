@@ -25,7 +25,7 @@ gulp.task('wc', function() {
 This would show the output like below:
 
 ```shell
-[01:01:31] ===========gulp-wc output start============
+[01:01:31] -------------gulp-wc output start-------------
 [01:01:31] js/all.js :58 lines
 [01:01:31] js/test.js :29 lines
 [01:01:31] js2/all.js :58 lines
