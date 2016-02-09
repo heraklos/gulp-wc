@@ -3,7 +3,6 @@
 var es = require('event-stream'),
     gutil = require('gulp-util'),
     _ = require('lodash'),
-    log = gutil.log,
     colors= gutil.colors,
     PluginError = gutil.PluginError;
 
@@ -41,14 +40,14 @@ function gulpWc() {
 
     function printResultClosure() {
         var previousParentDir;
-        log(colors.green("-------------gulp-wc output start-------------"));
+        console.log(colors.green("-------------gulp-wc output start-------------"));
 
         return function(filename, parentDir) {
             colorIndex = parentDir == previousParentDir ? colorIndex : (colorIndex + 1) % 4;
             previousParentDir = parentDir;
             filename = filename || stringForTotal;
             var lines = filename !== stringForTotal ? linesOfCode : wholeLinesOfCode;
-            log(colors[colorArray[colorIndex]](filename + " :" + lines + " lines"));
+            console.log(colors[colorArray[colorIndex]](filename + " :" + lines + " lines"));
         }
     }
 
