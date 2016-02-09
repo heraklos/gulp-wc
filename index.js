@@ -47,7 +47,7 @@ function gulpWc() {
             previousParentDir = parentDir;
             filename = filename || stringForTotal;
             var lines = filename !== stringForTotal ? linesOfCode : wholeLinesOfCode;
-            console.log(colors[colorArray[colorIndex]](filename + " :" + lines + " lines"));
+            console.log((filename == stringForTotal ? colors.green : colors[colorArray[colorIndex]])(filename + " :" + lines + " lines"));
         }
     }
 
