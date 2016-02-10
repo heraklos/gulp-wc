@@ -35,7 +35,6 @@ function gulpWc() {
         wholeLinesOfCode += linesOfCode;
 
         printResult(filename, parentDir);
-
     }
 
     function printResultClosure() {
